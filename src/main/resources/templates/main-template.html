@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Page Viewer</title>
+    <style>
+        /* Style for the PDF viewer and external websites */
+        .pdf-viewer, .external-website {
+            width: 80%;
+            height: 100vh;
+            float: left;
+        }
+        .pdf-viewer iframe, .external-website iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="pdf-viewer">
+    <!-- Embed the PDF viewer using an iframe -->
+    <iframe th:src="@{/resume.pdf}" frameborder="0"></iframe>
+</div>
+<div class="external-website">
+    <!-- Embed an external website using an iframe -->
+    <iframe src="https://example.com" frameborder="0"></iframe>
+</div>
+</body>
+</html>
