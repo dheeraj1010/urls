@@ -32,4 +32,12 @@ public class UrlEncDec {
         return num;
     }
 
+
+    public static String urlSanitization(String url) {
+        if (url.startsWith("https://") || url.startsWith("http://")) {
+            return url;
+        }
+        return "http://" + url;
+    }
+
 }
