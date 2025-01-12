@@ -19,7 +19,10 @@ public class UrlShortMapEntity {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "url")
+    @Column(name = "url", length = 1000)
     private String url;
+
+    @Column(name = "client_ip")
+    private String clientIp;
 
 }

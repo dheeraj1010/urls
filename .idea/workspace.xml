@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Added url encode">
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Add logging and URL sanitization functionality&#10;&#10;Introduced logging using Log4j to track requests and actions in `UrlController` and `UrlShortServiceImpl`. Added a URL sanitization utility method to ensure all URLs are properly prefixed with &quot;http://&quot; or &quot;https://&quot;. Updated generated short URLs to include &quot;redirect&quot; in their structure.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/util/HttpReqRespUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/controller/UrlController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/controller/UrlController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlEncodeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlEncodeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlEncodeResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlEncodeResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlShortMapEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/model/UrlShortMapEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/service/implementation/UrlShortServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/service/implementation/UrlShortServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/util/UrlEncDec.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dheeraj/pers/urls/util/UrlEncDec.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +70,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.AIAssistantPromptsLibrary&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -129,7 +132,9 @@
       <workItem from="1736601665134" duration="2430000" />
       <workItem from="1736608633142" duration="438000" />
       <workItem from="1736622262214" duration="14000" />
-      <workItem from="1736622307067" duration="1905000" />
+      <workItem from="1736622307067" duration="2143000" />
+      <workItem from="1736624470406" duration="3552000" />
+      <workItem from="1736706479284" duration="5114000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -139,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697223088747</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add logging and URL sanitization functionality&#10;&#10;Introduced logging using Log4j to track requests and actions in `UrlController` and `UrlShortServiceImpl`. Added a URL sanitization utility method to ensure all URLs are properly prefixed with &quot;http://&quot; or &quot;https://&quot;. Updated generated short URLs to include &quot;redirect&quot; in their structure.">
+      <option name="closed" value="true" />
+      <created>1736624416361</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736624416361</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Added url encode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added url encode" />
+    <MESSAGE value="Add logging and URL sanitization functionality&#10;&#10;Introduced logging using Log4j to track requests and actions in `UrlController` and `UrlShortServiceImpl`. Added a URL sanitization utility method to ensure all URLs are properly prefixed with &quot;http://&quot; or &quot;https://&quot;. Updated generated short URLs to include &quot;redirect&quot; in their structure." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add logging and URL sanitization functionality&#10;&#10;Introduced logging using Log4j to track requests and actions in `UrlController` and `UrlShortServiceImpl`. Added a URL sanitization utility method to ensure all URLs are properly prefixed with &quot;http://&quot; or &quot;https://&quot;. Updated generated short URLs to include &quot;redirect&quot; in their structure." />
   </component>
 </project>

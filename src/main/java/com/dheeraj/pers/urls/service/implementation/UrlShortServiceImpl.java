@@ -28,11 +28,12 @@ public class UrlShortServiceImpl implements UrlShortService {
     @Override
     public String encodeUrl(UrlEncodeRequest urlEncodeRequest) {
         UrlShortMapEntity urlShortMapEntity = new UrlShortMapEntity();
-        urlShortMapEntity.setUrl(UrlEncDec.urlSanitization(urlEncodeRequest.getUrl()));
+        urlShortMapEntity.setUrl(urlEncodeRequest.getUrl());
+        urlShortMapEntity.setClientIp(urlEncodeRequest.getClientIp());
         urlMapRepo.save(urlShortMapEntity);
         long generatedId = urlShortMapEntity.getId();
         logger.info("Generated ID for URL: " + generatedId);
-        return publicUrlServer + "redirect/" + UrlEncDec.encodeFromNumber(generatedId);
+        return publicUrlServer + UrlEncDec.encodeFromNumber(generatedId);
     }
 
     @Override
@@ -41,6 +42,6 @@ public class UrlShortServiceImpl implements UrlShortService {
         urlShortMapEntityTemp.setUrl("www.google.com");
         String redirectUrl = urlMapRepo.findById(UrlEncDec.decodeFromBase64(target.trim())).orElse(urlShortMapEntityTemp).getUrl();
         logger.info("Redirecting to: {}", redirectUrl);
-        return redirectUrl;
+        return UrlEncDec.urlSanitization(redirectUrl);
     }
 }
