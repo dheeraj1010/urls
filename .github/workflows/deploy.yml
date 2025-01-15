@@ -72,7 +72,7 @@ jobs:
             
             # Start new Java process
             echo "Starting new Java process with command: nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE"
-            nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
+            java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
           
             # Validate that the process started successfully
             NEW_PID=$(pgrep -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME")
