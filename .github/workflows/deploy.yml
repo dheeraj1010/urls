@@ -45,9 +45,9 @@ jobs:
             
             #Checking the jar directory
             echo "Listing files in target directory"
-            ls target
+            ls -l target/
             echo "Listing files in github workspace target directory"
-            ls ${{ github.workspace }}/target
+            ls -l ${{ github.workspace }}/target/
             
             
             
