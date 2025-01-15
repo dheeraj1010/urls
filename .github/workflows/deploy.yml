@@ -42,10 +42,10 @@ jobs:
 
       - name: Transfer JAR to VPS
         run: |
-          scp -o StrictHostKeyChecking=no target/urls-0.0.1.jar ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/root/urlApp/
-
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          echo "${{ secrets.VPS_SSH_KEY }}" > private_key.pem
+          chmod 600 private_key.pem
+          scp -i private_key.pem -o StrictHostKeyChecking=no target/urls-0.0.1.jar ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/root/urlApp/
+        shell: bash
 
 
       - name: Deploy to VPS
