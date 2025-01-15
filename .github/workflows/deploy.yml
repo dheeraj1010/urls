@@ -56,29 +56,13 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             
-            # Define variables
-            JAR_NAME="urls-0.0.1.jar"
-            APP_DIR="/root/urlApp/"
-            REMOTE_JAR_PATH="$APP_DIR$JAR_NAME"
-            LOG_FILE="$APP_DIR/logfile.log"
-            SPRING_PROFILE="prod"
-            
-            
             # Stop existing Java process
             echo 'Stopping existing Java process'
-            pkill -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME" || true
+            pkill -f 'java -Dspring.profiles.active=prod -jar $JAR_NAME' || true
             sleep 7
   
             
             # Start new Java process
-            echo "Starting new Java process with command: nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE"
-            java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
+            cd /root/urlApp/
+            java -jar urls-0.0.1.jar --spring.profiles.active=prod > $LOG_FILE 2>&1 &
           
-            # Validate that the process started successfully
-            NEW_PID=$(pgrep -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME")
-            if [ -n "$NEW_PID" ]; then
-              echo "New Java process started successfully with PID: $NEW_PID"
-            else
-              echo "Failed to start Java process. Please check the logs at $LOG_FILE for more details."
-              exit 1
-            fi
