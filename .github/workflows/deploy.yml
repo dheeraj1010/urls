@@ -59,12 +59,10 @@ jobs:
             # Stop existing Java process
             echo 'Stopping existing Java process'
             pkill -f 'java -Dspring.profiles.active=prod -jar urls-0.0.1.jar' || true
-            sleep 7
+
   
             
             # Start new Java process
-            cd /root/urlApp/
-            pwd
-            java -Dspring.profiles.active=prod -jar urls-0.0.1.jar > logfile.log 2>&1 &
+            java -Dspring.profiles.active=prod -jar /root/urlApp/urls-0.0.1.jar > /root/urlApp/logfile.log 2>&1 &
             sleep 10
           
