@@ -20,6 +20,15 @@ jobs:
           distribution: 'temurin'
           check-latest: false
 
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2-
+
       - name: Build with Maven
         run: |
           mvn clean package -DskipTests
@@ -31,6 +40,15 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            
+            #Checking the jar directory
+            echo "Listing files in target directory"
+            ls target
+            echo "Listing files in github workspace target directory"
+            ls ${{ github.workspace }}/target
+            
+            
+            
             # Define variables
             JAR_NAME="urls-0.0.1.jar"
             APP_DIR="/root/${{ secrets.VPS_USER }}/urlApp/"
@@ -45,7 +63,7 @@ jobs:
             
             # Copy new JAR file to VPS
             echo "Copying new JAR to VPS"
-            scp target/$JAR_NAME ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:$REMOTE_JAR_PATH
+            scp ${{ github.workspace }}/target/$JAR_NAME ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:$REMOTE_JAR_PATH
             if [ $? -ne 0 ]; then
             echo "SCP failed"
             exit 1
