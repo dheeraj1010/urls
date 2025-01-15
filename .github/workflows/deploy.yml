@@ -64,5 +64,5 @@ jobs:
             
             # Start new Java process
             cd /root/urlApp/
-            java -Dspring.profiles.active=prod -jar urls-0.0.1.jar > logfile.log 2>&1 &
+            java -Dspring.profiles.active=prod -jar urls-0.0.1.jar > logfile.log 2>&1
           
