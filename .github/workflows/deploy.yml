@@ -32,6 +32,8 @@ jobs:
       - name: Build with Maven
         run: |
           mvn clean package -DskipTests
+          echo "Build completed. Listing files in the target directory:"
+          ls -l target/
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v0.1.5

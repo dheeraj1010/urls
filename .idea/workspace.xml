@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding better process management, structured logging, and error handling during JAR file deployment and process startup. These changes ensure smoother operations and easier debugging of deployment issues.">
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding a Maven dependency cache, structured logging, and error handling during the deployment process. Updated SCP command to use an explicit path and added file listing for better debugging. These changes ensure more robust deployments and easier troubleshooting.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +133,7 @@
       <workItem from="1736622307067" duration="2143000" />
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
-      <workItem from="1736870751448" duration="10516000" />
+      <workItem from="1736870751448" duration="10823000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -208,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736967073801</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding a Maven dependency cache, structured logging, and error handling during the deployment process. Updated SCP command to use an explicit path and added file listing for better debugging. These changes ensure more robust deployments and easier troubleshooting.">
+      <option name="closed" value="true" />
+      <created>1736967794776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736967794776</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +231,7 @@
     <MESSAGE value="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to use 'temurin' as the Java distribution and set the 'check-latest' option to false. This ensures consistent and reliable builds by explicitly specifying the distribution and avoiding automatic updates to the latest version." />
     <MESSAGE value="Improve deploy script for robustness and logging&#10;&#10;Enhanced the deploy workflow by adding logging for key steps, handling SCP errors, and introducing a delay after stopping processes. These changes improve reliability and provide better visibility into deployment operations." />
     <MESSAGE value="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding better process management, structured logging, and error handling during JAR file deployment and process startup. These changes ensure smoother operations and easier debugging of deployment issues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding better process management, structured logging, and error handling during JAR file deployment and process startup. These changes ensure smoother operations and easier debugging of deployment issues." />
+    <MESSAGE value="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding a Maven dependency cache, structured logging, and error handling during the deployment process. Updated SCP command to use an explicit path and added file listing for better debugging. These changes ensure more robust deployments and easier troubleshooting." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding a Maven dependency cache, structured logging, and error handling during the deployment process. Updated SCP command to use an explicit path and added file listing for better debugging. These changes ensure more robust deployments and easier troubleshooting." />
   </component>
 </project>
