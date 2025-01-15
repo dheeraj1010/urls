@@ -28,6 +28,8 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-m2-
+          enableCrossOsArchive: false
+        continue-on-error: true
 
       - name: Build with Maven
         run: |
@@ -38,6 +40,11 @@ jobs:
           echo "Exact path of urls-0.0.1.jar:"
           realpath target/urls-0.0.1.jar
 
+      - name: Transfer JAR to VPS
+        run: |
+          scp target/urls-0.0.1.jar ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/root/urlApp
+
+
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v0.1.5
         with:
@@ -46,33 +53,20 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             
-            #Checking the jar directory
-            echo "Listing files in target directory"
-            ls -l target/
-            echo "Listing files in github workspace target directory"
-            ls -l ${{ github.workspace }}/target/
-            
-            
-            
             # Define variables
             JAR_NAME="urls-0.0.1.jar"
             APP_DIR="/root/${{ secrets.VPS_USER }}/urlApp/"
             REMOTE_JAR_PATH="$APP_DIR$JAR_NAME"
             LOG_FILE="$APP_DIR/logfile.log"
             SPRING_PROFILE="prod"
+            echo "/home/runner/work/urls/urls/target/urls-0.0.1.jar"
+            
             
             # Stop existing Java process
             echo 'Stopping existing Java process'
             pkill -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME" || true
             sleep 7
-            
-            # Copy new JAR file to VPS
-            echo "Copying new JAR to VPS"
-            scp ${{ github.workspace }}/target/$JAR_NAME ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:$REMOTE_JAR_PATH
-            if [ $? -ne 0 ]; then
-            echo "SCP failed"
-            exit 1
-            fi
+  
             
             # Start new Java process
             echo "Starting new Java process"

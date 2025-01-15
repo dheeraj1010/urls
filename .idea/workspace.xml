@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Add file listing to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by including detailed file listings after the Maven build step for better debugging visibility. Updated metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and ensure more robust deployments.">
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Add file path output to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by adding a command to output the exact path of the generated JAR file for better debugging visibility. Updated related metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and strengthen deployment reliability.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -134,7 +134,7 @@
       <workItem from="1736622307067" duration="2143000" />
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
-      <workItem from="1736870751448" duration="12986000" />
+      <workItem from="1736870751448" duration="14229000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -232,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736969333072</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add file path output to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by adding a command to output the exact path of the generated JAR file for better debugging visibility. Updated related metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and strengthen deployment reliability.">
+      <option name="closed" value="true" />
+      <created>1736970254417</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736970254417</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +259,7 @@
     <MESSAGE value="Refactor deploy workflow for enhanced reliability.&#10;&#10;Improved the GitHub Actions deploy script by adding a Maven dependency cache, structured logging, and error handling during the deployment process. Updated SCP command to use an explicit path and added file listing for better debugging. These changes ensure more robust deployments and easier troubleshooting." />
     <MESSAGE value="Add file listing to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by listing build artifacts after the Maven build step to aid in debugging. Updated associated comments and metadata for improved clarity and consistency. These changes contribute to more transparent and robust deployments." />
     <MESSAGE value="Add file listing to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by including detailed file listings after the Maven build step for better debugging visibility. Updated metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and ensure more robust deployments." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add file listing to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by including detailed file listings after the Maven build step for better debugging visibility. Updated metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and ensure more robust deployments." />
+    <MESSAGE value="Add file path output to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by adding a command to output the exact path of the generated JAR file for better debugging visibility. Updated related metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and strengthen deployment reliability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add file path output to Maven build step in deploy script&#10;&#10;Enhanced the deploy workflow by adding a command to output the exact path of the generated JAR file for better debugging visibility. Updated related metadata and comments to improve clarity and maintain consistency. These changes aim to streamline troubleshooting and strengthen deployment reliability." />
   </component>
 </project>
