@@ -134,7 +134,7 @@
       <workItem from="1736622307067" duration="2143000" />
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
-      <workItem from="1736870751448" duration="7150000" />
+      <workItem from="1736870751448" duration="7485000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -168,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736963566143</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add GitHub Actions workflow for Spring Boot deployment&#10;&#10;Introduce an automated deployment workflow using GitHub Actions. This configuration builds the Spring Boot application with Maven and deploys it to a remote VPS. It ensures seamless deployment when changes are pushed to the `main` branch.">
+      <option name="closed" value="true" />
+      <created>1736963915108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736963915108</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
