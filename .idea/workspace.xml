@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to specify 'temurin' as the Java distribution and set 'check-latest' to false. This ensures consistent builds by explicitly defining the distribution and disabling automatic updates to the latest version.">
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to use 'temurin' as the Java distribution and set the 'check-latest' option to false. This ensures consistent and reliable builds by explicitly specifying the distribution and avoiding automatic updates to the latest version.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +134,7 @@
       <workItem from="1736622307067" duration="2143000" />
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
-      <workItem from="1736870751448" duration="7716000" />
+      <workItem from="1736870751448" duration="9578000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -191,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736964266118</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to use 'temurin' as the Java distribution and set the 'check-latest' option to false. This ensures consistent and reliable builds by explicitly specifying the distribution and avoiding automatic updates to the latest version.">
+      <option name="closed" value="true" />
+      <created>1736964477938</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736964477938</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +213,7 @@
     <MESSAGE value="Add rate limiting, IP tracking, and URL enhancements&#10;&#10;Integrated Resilience4j for API rate limiting and added client IP tracking in URL encoding requests. Improved URL sanitization and adjusted URL redirection logic. Also included error message handling and updated application properties and dependencies." />
     <MESSAGE value="Add GitHub Actions workflow for Spring Boot deployment&#10;&#10;Introduce an automated deployment workflow using GitHub Actions. This configuration builds the Spring Boot application with Maven and deploys it to a remote VPS. It ensures seamless deployment when changes are pushed to the `main` branch." />
     <MESSAGE value="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to specify 'temurin' as the Java distribution and set 'check-latest' to false. This ensures consistent builds by explicitly defining the distribution and disabling automatic updates to the latest version." />
-    <option name="LAST_COMMIT_MESSAGE" value="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to specify 'temurin' as the Java distribution and set 'check-latest' to false. This ensures consistent builds by explicitly defining the distribution and disabling automatic updates to the latest version." />
+    <MESSAGE value="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to use 'temurin' as the Java distribution and set the 'check-latest' option to false. This ensures consistent and reliable builds by explicitly specifying the distribution and avoiding automatic updates to the latest version." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set Java distribution to Temurin in deploy workflow&#10;&#10;Updated the GitHub Actions deploy workflow to use 'temurin' as the Java distribution and set the 'check-latest' option to false. This ensures consistent and reliable builds by explicitly specifying the distribution and avoiding automatic updates to the latest version." />
   </component>
 </project>

@@ -31,8 +31,27 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            pkill -f 'java -jar urls-0.0.1.jar' || true
-            scp target/urls-0.0.1.jar ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/root/${{ secrets.VPS_USER }}/urlApp/
-            nohup java -jar /root/${{ secrets.VPS_USER }}/urlApp/urls-0.0.1.jar --spring.profiles.active=prod > /root/${{ secrets.VPS_USER }}/urlApp/log.out 2>&1 &
-
+            # Define variables
+            JAR_NAME="urls-0.0.1.jar"
+            APP_DIR="/root/${{ secrets.VPS_USER }}/urlApp/"
+            REMOTE_JAR_PATH="$APP_DIR$JAR_NAME"
+            LOG_FILE="$APP_DIR/logfile.log"
+            SPRING_PROFILE="prod"
+            
+            # Stop existing Java process
+            echo 'Stopping existing Java process'
+            pkill -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME" || true
+            sleep 7
+            
+            # Copy new JAR file to VPS
+            echo "Copying new JAR to VPS"
+            scp target/$JAR_NAME ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:$REMOTE_JAR_PATH
+            if [ $? -ne 0 ]; then
+            echo "SCP failed"
+            exit 1
+            fi
+            
+            # Start new Java process
+            echo "Starting new Java process"
+            nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
 
