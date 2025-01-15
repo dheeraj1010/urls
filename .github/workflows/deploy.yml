@@ -58,11 +58,10 @@ jobs:
             
             # Define variables
             JAR_NAME="urls-0.0.1.jar"
-            APP_DIR="/root/${{ secrets.VPS_USER }}/urlApp/"
+            APP_DIR="/root/urlApp/"
             REMOTE_JAR_PATH="$APP_DIR$JAR_NAME"
             LOG_FILE="$APP_DIR/logfile.log"
             SPRING_PROFILE="prod"
-            echo "/home/runner/work/urls/urls/target/urls-0.0.1.jar"
             
             
             # Stop existing Java process
@@ -74,4 +73,12 @@ jobs:
             # Start new Java process
             echo "Starting new Java process"
             nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
-
+          
+            # Validate that the process started successfully
+            NEW_PID=$(pgrep -f "java -Dspring.profiles.active=$SPRING_PROFILE -jar $JAR_NAME")
+            if [ -n "$NEW_PID" ]; then
+              echo "New Java process started successfully with PID: $NEW_PID"
+            else
+              echo "Failed to start Java process. Please check the logs at $LOG_FILE for more details."
+              exit 1
+            fi
