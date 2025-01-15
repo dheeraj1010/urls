@@ -34,6 +34,9 @@ jobs:
           mvn clean package -DskipTests
           echo "Build completed. Listing files in the target directory:"
           ls -l target/
+          
+          echo "Exact path of urls-0.0.1.jar:"
+          realpath target/urls-0.0.1.jar
 
       - name: Deploy to VPS
         uses: appleboy/ssh-action@v0.1.5
