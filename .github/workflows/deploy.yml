@@ -63,6 +63,6 @@ jobs:
   
             
             # Start new Java process
-            nohup java -Dspring.profiles.active=prod -jar /root/urlApp/urls-0.0.1.jar > /root/urlApp/logfile.log 2>&1 &
+            java -Dspring.profiles.active=prod -jar /root/urlApp/urls-0.0.1.jar > /root/urlApp/logfile.log 2>&1 &
             sleep 10
           
