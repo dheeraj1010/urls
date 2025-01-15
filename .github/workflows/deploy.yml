@@ -72,7 +72,7 @@ jobs:
             
             # Start new Java process
             echo "Starting new Java process"
-            echo "$REMOTE_JAR_PATH"
+            echo $REMOTE_JAR_PATH
             nohup java -jar $REMOTE_JAR_PATH --spring.profiles.active=$SPRING_PROFILE > $LOG_FILE 2>&1 &
           
             # Validate that the process started successfully
