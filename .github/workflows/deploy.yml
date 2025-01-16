@@ -100,11 +100,11 @@ jobs:
                 log_message "I am before kill command"
                 kill $PID
                 log_message "I am after kill command"
-                if wait $PID 2>/dev/null; then
-                  log_message "Application stopped successfully."
-                else
-                  log_message "Application already stopped or forcefully terminated."
-                fi
+                while pregp -f "$APP_NAME" >/dev/null; do
+                  log_message "Waiting for application to stop..."
+                  sleep 1
+                done
+                log_message "Application stopped successfully."
               else
                 log_message "No running application found with name $APP_NAME."
               fi
