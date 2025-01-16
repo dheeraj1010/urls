@@ -97,6 +97,7 @@ jobs:
               PID=$(pgrep -f "$APP_NAME")
               log_message "PID = $PID"
               if [ -n "$PID" ]; then
+                log "I am in If Case Block"
                 kill $PID
                 while kill -0 $PID 2>/dev/null; do
                   log_message "Waiting for application to stop..."
