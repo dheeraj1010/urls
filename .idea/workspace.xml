@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Improve deployment script with additional logging&#10;&#10;Updated logging in the application stopping process to enhance monitoring and debugging. This ensures better visibility of deployment steps and simplifies troubleshooting. Workspace settings were also updated but with no impact on functionality.">
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Improve deployment script logging for better debugging&#10;&#10;Updated the logging in the application stopping process to enhance monitoring and debugging during deployments. These changes provide greater visibility of deployment steps and simplify troubleshooting. Additionally, workspace configuration updates were made without impacting functionality.">
       <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +135,7 @@
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
       <workItem from="1736870751448" duration="19281000" />
-      <workItem from="1737038024520" duration="2926000" />
+      <workItem from="1737038024520" duration="3321000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -432,7 +433,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737040798615</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Improve deployment script logging for better debugging&#10;&#10;Updated the logging in the application stopping process to enhance monitoring and debugging during deployments. These changes provide greater visibility of deployment steps and simplify troubleshooting. Additionally, workspace configuration updates were made without impacting functionality.">
+      <option name="closed" value="true" />
+      <created>1737040988843</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1737040988843</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,6 +469,7 @@
     <MESSAGE value="Enhance deployment script with logging and error handling&#10;&#10;Added detailed logging for application stopping process to improve monitoring. Ensures better visibility of deployment steps and graceful handling of potential errors. Updated workspace settings without introducing functional changes." />
     <MESSAGE value="Improve deployment script with additional logging&#10;&#10;Added a log entry in the application stopping process to enhance monitoring and debugging during deployments. These changes ensure better visibility and easier troubleshooting. Workspace settings were also updated without any functional impact." />
     <MESSAGE value="Improve deployment script with additional logging&#10;&#10;Updated logging in the application stopping process to enhance monitoring and debugging. This ensures better visibility of deployment steps and simplifies troubleshooting. Workspace settings were also updated but with no impact on functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve deployment script with additional logging&#10;&#10;Updated logging in the application stopping process to enhance monitoring and debugging. This ensures better visibility of deployment steps and simplifies troubleshooting. Workspace settings were also updated but with no impact on functionality." />
+    <MESSAGE value="Improve deployment script logging for better debugging&#10;&#10;Updated the logging in the application stopping process to enhance monitoring and debugging during deployments. These changes provide greater visibility of deployment steps and simplify troubleshooting. Additionally, workspace configuration updates were made without impacting functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve deployment script logging for better debugging&#10;&#10;Updated the logging in the application stopping process to enhance monitoring and debugging during deployments. These changes provide greater visibility of deployment steps and simplify troubleshooting. Additionally, workspace configuration updates were made without impacting functionality." />
   </component>
 </project>

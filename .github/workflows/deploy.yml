@@ -97,6 +97,7 @@ jobs:
               PID=$(pgrep -f "$APP_NAME")
               log_message "PID = $PID"
               if [ -n "$PID" ]; then
+                log_message "I am before kill command"
                 kill $PID
                 log_message "I am after kill command"
                 PID=$(pgrep -f "$APP_NAME")
