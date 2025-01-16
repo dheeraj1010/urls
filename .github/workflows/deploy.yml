@@ -56,7 +56,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            bash /root/deploy_app.sh
+            bash /root/urlApp/deploy_app.sh
 
             # Check deployment status
             if [ -f "/root/urlApp/github_action_status.env" ]; then
