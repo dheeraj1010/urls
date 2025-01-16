@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -24,5 +25,13 @@ public class UrlShortMapEntity {
 
     @Column(name = "client_ip")
     private String clientIp;
+
+    @Column(name = "created_on", updatable = false)
+    private LocalDateTime createdOn;
+
+    @PrePersist
+    public void prePersist() {
+        this.createdOn = LocalDateTime.now();
+    }
 
 }
