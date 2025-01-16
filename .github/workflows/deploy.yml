@@ -47,28 +47,6 @@ jobs:
           scp -i private_key.pem -o StrictHostKeyChecking=no target/urls-0.0.1.jar ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/root/urlApp/
         shell: bash
 
-#
-#      - name: Deploy to VPS
-#        uses: appleboy/ssh-action@v0.1.5
-#        with:
-#          host: ${{ secrets.VPS_HOST }}
-#          username: ${{ secrets.VPS_USER }}
-#          key: ${{ secrets.VPS_SSH_KEY }}
-#          script: |
-#
-#
-#
-#
-#            # Stop existing Java process
-#            # echo 'Stopping existing Java process'
-#            # pkill -f 'java -Dspring.profiles.active=prod -jar urls-0.0.1.jar' || true
-#
-#
-#
-#            # Start new Java process
-#            # ls -l
-#            nohup java -Dspring.profiles.active=prod -jar /root/urlApp/urls-0.0.1.jar > /root/urlApp/logfile.log 2>&1 &
-#            sleep 10
 
 
       - name: Deploy to VPS
@@ -78,61 +56,17 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            #!/bin/bash
-            APP_NAME="urls-0.0.1.jar"
-            APP_PATH="/root/urlApp/$APP_NAME"
-            LOG_FILE="/root/urlApp/logfile.log"
-            ERROR_LOG_FILE="/root/urlApp/error.log"
-            
-            log_message() {
-              echo "$(date +'%Y-%m-%d %H:%M:%S') - $1" | tee -a $LOG_FILE
-            }
-            
-            log_error() {
-              echo "$(date +'%Y-%m-%d %H:%M:%S') - ERROR: $1" | tee -a $ERROR_LOG_FILE
-            }
-            
-            stop_app() {
-              log_message "Attempting to stop the application..."
-              PID=$(pgrep -f "$APP_NAME")
-              log_message "PID = $PID"
-              if [ -n "$PID" ]; then
-                log_message "Processes found with PIDs: $PIDS"
-                kill $PID
-                sleep 5
-                log_message "I am after kill command"
-                if pgrep -f "$APP_NAME" >/dev/null; then
-                  log_message "Processes still running. Sending SIGKILL..."
-                  kill -9 $PIDS
-                fi
-              else
-                log_message "No running application found with name $APP_NAME."
-              fi
-            }
-            
-            start_app() {
-              log_message "Starting application..."
-              nohup java -Dspring.profiles.active=prod -jar "$APP_PATH" > "$LOG_FILE" 2> "$ERROR_LOG_FILE" &
-              log_message "Application started with PID $(cat $PID_FILE)."
-            }
-            
-            deploy_app() {
-              log_message "Deployment started."
-              stop_app
-              if [ $? -eq 0 ]; then
-                log_message "Application stopped, proceeding to start a new instance."
-                start_app
-                if [ $? -eq 0 ]; then
-                  log_message "Application deployed successfully."
-                else
-                  log_error "Failed to start the application."
-                  exit 1
-                fi
-              else
-                log_error "Failed to stop the application."
+            bash /root/deploy_app.sh
+
+            # Check deployment status
+            if [ -f "/root/urlApp/github_action_status.env" ]; then
+              source /root/urlApp/github_action_status.env
+              if [ "$DEPLOYMENT_STATUS" != "success" ]; then
+                echo "Deployment failed on VPS."
                 exit 1
               fi
-            }
-            
-            deploy_app
-
+            else
+              echo "Deployment status file not found!"
+              exit 1
+            fi
+          
