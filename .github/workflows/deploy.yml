@@ -95,6 +95,7 @@ jobs:
             stop_app() {
               log_message "Attempting to stop the application..."
               PID=$(pgrep -f "$APP_NAME")
+              log_message "PID = $PID"
               if [ -n "$PID" ]; then
                 kill $PID
                 while kill -0 $PID 2>/dev/null; do
