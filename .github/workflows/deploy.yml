@@ -97,14 +97,14 @@ jobs:
               PID=$(pgrep -f "$APP_NAME")
               log_message "PID = $PID"
               if [ -n "$PID" ]; then
-                log_message "I am before kill command"
-                kill -9 $PID
+                log_message "Processes found with PIDs: $PIDS"
+                kill $PID
+                sleep 5
                 log_message "I am after kill command"
-                while pgrep -f "$APP_NAME" >/dev/null; do
-                  log_message "Waiting for application to stop..."
-                  sleep 1
-                done
-                log_message "Application stopped successfully."
+                if pgrep -f "$APP_NAME" >/dev/null; then
+                  log_message "Processes still running. Sending SIGKILL..."
+                  kill -9 $PIDS
+                fi
               else
                 log_message "No running application found with name $APP_NAME."
               fi
