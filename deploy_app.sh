@@ -2,9 +2,9 @@
 
 # Constants
 APP_NAME="urls-0.0.1.jar"
-LOG_FILE="/logfile.log"
-ERROR_LOG_FILE="/error.log"
-GITHUB_ENV_FILE="/github_action_status.env" # File to communicate status to GitHub
+LOG_FILE="logfile.log"
+ERROR_LOG_FILE="error.log"
+GITHUB_ENV_FILE="github_action_status.env" # File to communicate status to GitHub
 CHECK_INTERVAL=5
 MAX_CHECKS=5
 
@@ -45,7 +45,7 @@ stop_app() {
 # Start the application
 start_app() {
   log_message "Starting application..."
-  nohup java -Dspring.profiles.active=prod -jar "$APP_NAME" > "$LOG_FILE" 2> "$ERROR_LOG_FILE" &
+  nohup java -Dspring.profiles.active=prod -jar "$APP_NAME" > "$LOG_FILE" 2>&1 &
   sleep 5 # Allow application to start
 }
 
@@ -108,8 +108,4 @@ deploy_app() {
 }
 
 # Main execution
-cd
 deploy_app
-
-
-#scp

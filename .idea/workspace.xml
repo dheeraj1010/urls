@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Optimize deployment process by using external script.&#10;&#10;Replaced inline deployment steps in the workflow with a call to an external script for better manageability and modularity. Added a check for deployment status to enhance reliability and minimize potential errors during deployment. Minor updates to workspace configuration were also incorporated.">
-      <change afterPath="$PROJECT_DIR$/deploy_app.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="770b710c-57b0-438a-99ef-d436bf417f00" name="Changes" comment="Refactor deployment workflow to use an external script&#10;&#10;Replaced inline deployment steps in the GitHub Actions workflow with an external `deploy_app.sh` script for improved maintainability and modularity. Enhanced deployment reliability by adding application stop/start handling and status verification. Minor workspace configuration updates were also included.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy_app.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy_app.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +135,7 @@
       <workItem from="1736624470406" duration="3552000" />
       <workItem from="1736706479284" duration="5942000" />
       <workItem from="1736870751448" duration="19281000" />
-      <workItem from="1737038024520" duration="8469000" />
+      <workItem from="1737038024520" duration="8893000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -514,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737044330562</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Refactor deployment workflow to use an external script&#10;&#10;Replaced inline deployment steps in the GitHub Actions workflow with an external `deploy_app.sh` script for improved maintainability and modularity. Enhanced deployment reliability by adding application stop/start handling and status verification. Minor workspace configuration updates were also included.">
+      <option name="closed" value="true" />
+      <created>1737046517854</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1737046517854</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,6 +552,7 @@
     <MESSAGE value="Improve deployment script logging for better debugging&#10;&#10;Updated the logging in the application stopping process to enhance monitoring and debugging during deployments. These changes provide greater visibility of deployment steps and simplify troubleshooting. Additionally, workspace configuration updates were made without impacting functionality." />
     <MESSAGE value="Improve deployment script logging for better debugging&#10;&#10;Added detailed logging around the application stopping process to enhance monitoring and debugging during deployments. These changes offer improved visibility into the deployment steps and simplify troubleshooting. Minor updates to workspace configuration were made without functional impact." />
     <MESSAGE value="Optimize deployment process by using external script.&#10;&#10;Replaced inline deployment steps in the workflow with a call to an external script for better manageability and modularity. Added a check for deployment status to enhance reliability and minimize potential errors during deployment. Minor updates to workspace configuration were also incorporated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimize deployment process by using external script.&#10;&#10;Replaced inline deployment steps in the workflow with a call to an external script for better manageability and modularity. Added a check for deployment status to enhance reliability and minimize potential errors during deployment. Minor updates to workspace configuration were also incorporated." />
+    <MESSAGE value="Refactor deployment workflow to use an external script&#10;&#10;Replaced inline deployment steps in the GitHub Actions workflow with an external `deploy_app.sh` script for improved maintainability and modularity. Enhanced deployment reliability by adding application stop/start handling and status verification. Minor workspace configuration updates were also included." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor deployment workflow to use an external script&#10;&#10;Replaced inline deployment steps in the GitHub Actions workflow with an external `deploy_app.sh` script for improved maintainability and modularity. Enhanced deployment reliability by adding application stop/start handling and status verification. Minor workspace configuration updates were also included." />
   </component>
 </project>
