@@ -98,7 +98,7 @@ jobs:
               log_message "PID = $PID"
               if [ -n "$PID" ]; then
                 log_message "I am before kill command"
-                kill $PID
+                kill -9 $PID
                 log_message "I am after kill command"
                 while pgrep -f "$APP_NAME" >/dev/null; do
                   log_message "Waiting for application to stop..."
