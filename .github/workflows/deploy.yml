@@ -100,7 +100,7 @@ jobs:
                 log_message "I am before kill command"
                 kill $PID
                 log_message "I am after kill command"
-                while pregp -f "$APP_NAME" >/dev/null; do
+                while pgrep -f "$APP_NAME" >/dev/null; do
                   log_message "Waiting for application to stop..."
                   sleep 1
                 done
