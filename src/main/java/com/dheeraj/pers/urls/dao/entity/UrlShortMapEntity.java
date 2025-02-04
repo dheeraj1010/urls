@@ -1,4 +1,4 @@
-package com.dheeraj.pers.urls.model;
+package com.dheeraj.pers.urls.dao.entity;
 
 
 import lombok.Getter;

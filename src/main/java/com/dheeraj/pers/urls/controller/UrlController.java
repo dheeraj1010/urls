@@ -32,7 +32,7 @@ public class UrlController {
     @RateLimiter(name = "apiRateLimiter")
     public ResponseEntity<UrlEncodeResponse> encodeUrl(@RequestBody UrlEncodeRequest urlEncodeRequest, HttpServletRequest request) {
         urlEncodeRequest.setClientIp(HttpReqRespUtils.getClientIpAddressIfServletRequestExist(request));
-        logger.info("Received request to encode URL: " + urlEncodeRequest.getUrl());
+        logger.info("Received request to encode URL: {}", urlEncodeRequest.getUrl());
         UrlEncodeResponse urlEncodeResponse = new UrlEncodeResponse();
         urlEncodeResponse.setShortedUrl(urlShortService.encodeUrl(urlEncodeRequest));
         return new ResponseEntity<>(urlEncodeResponse, HttpStatus.OK);
@@ -42,7 +42,7 @@ public class UrlController {
     @GetMapping("{target}")
     @RateLimiter(name = "apiRateLimiter")
     public void redirectToTargetURL(@PathVariable String target, HttpServletResponse response) throws IOException {
-        logger.info("Received request to redirect to: " + target);
+        logger.info("Received request to redirect to: {}", target);
         response.sendRedirect(urlShortService.decodeUrl(target));
     }
 

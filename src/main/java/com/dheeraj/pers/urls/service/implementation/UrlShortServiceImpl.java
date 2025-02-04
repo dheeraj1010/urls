@@ -2,7 +2,7 @@ package com.dheeraj.pers.urls.service.implementation;
 
 import com.dheeraj.pers.urls.dao.UrlMapRepo;
 import com.dheeraj.pers.urls.model.UrlEncodeRequest;
-import com.dheeraj.pers.urls.model.UrlShortMapEntity;
+import com.dheeraj.pers.urls.dao.entity.UrlShortMapEntity;
 import com.dheeraj.pers.urls.service.UrlShortService;
 import com.dheeraj.pers.urls.util.UrlEncDec;
 import org.apache.logging.log4j.LogManager;
