@@ -3,7 +3,6 @@ package com.dheeraj.pers.urls.controller;
 import com.dheeraj.pers.urls.model.EmailValidationRequest;
 import com.dheeraj.pers.urls.model.EmailValidationResponse;
 import com.dheeraj.pers.urls.service.EmailValidationService;
-import com.dheeraj.pers.urls.service.implementation.EmailValidationServiceImpl;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

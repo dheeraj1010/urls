@@ -35,7 +35,7 @@ public class DisposableEmailDomainJob {
 
     @PostConstruct
     public void init() {
-        if(disposableDomainRepo.count() == 0){
+        if(disposableDomainRepo.count() < 1500){
             logger.info("No disposable domains found in the database. Fetching from the source.");
             fetchAndPersistDisposableEmailDomains();
         }
